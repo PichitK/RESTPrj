@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{259B0ECC-7AF9-4F0A-A95E-57AFB06BAE15}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrgCommunication</RootNamespace>
+    <AssemblyName>OrgCommunication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\OrgCommunication.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.7.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.9.7\lib\net20\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.Net45.5.2.1\lib\net45\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.WebHost, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Net45.5.2.1\lib\net45\Swashbuckle.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.2\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.2\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIs\MessageController.cs" />
+    <Compile Include="APIs\SystemController.cs" />
+    <Compile Include="APIs\StickerController.cs" />
+    <Compile Include="APIs\NewsController.cs" />
+    <Compile Include="APIs\NoteController.cs" />
+    <Compile Include="APIs\FileController.cs" />
+    <Compile Include="APIs\ContactController.cs" />
+    <Compile Include="APIs\CompanyController.cs" />
+    <Compile Include="APIs\MemberController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Business\Base\BaseController.cs" />
+    <Compile Include="Business\ChatBL.cs" />
+    <Compile Include="Business\CompanyBL.cs" />
+    <Compile Include="Business\Configs\AppConfigs.cs" />
+    <Compile Include="Business\Configs\DBConfigs.cs" />
+    <Compile Include="Business\Exception\OrgException.cs" />
+    <Compile Include="Business\MessageBL.cs" />
+    <Compile Include="Business\SystemBL.cs" />
+    <Compile Include="Business\StickerBL .cs" />
+    <Compile Include="Business\NewsBL.cs" />
+    <Compile Include="Business\NoteBL.cs" />
+    <Compile Include="Business\UploadBL.cs" />
+    <Compile Include="Business\GroupBL.cs" />
+    <Compile Include="Business\FriendBL.cs" />
+    <Compile Include="Business\MemberBL.cs" />
+    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Controllers\StickerController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Filters\GlobalExceptionHandleAttribute.cs" />
+    <Compile Include="Filters\Authorization .cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Drawing\ImageHelper.cs" />
+    <Compile Include="Helpers\MailSender.cs" />
+    <Compile Include="Helpers\Security\IdentityHelper.cs" />
+    <Compile Include="Helpers\Security\SecurityHelper.cs" />
+    <Compile Include="Helpers\Validator.cs" />
+    <Compile Include="Models\Company\CompanyInfoRequestModel.cs" />
+    <Compile Include="Models\Company\DepartmentResultModel.cs" />
+    <Compile Include="Models\Company\PositionResultModel.cs" />
+    <Compile Include="Models\Company\CompanyResultModel.cs" />
+    <Compile Include="Models\File\FileContentModel.cs" />
+    <Compile Include="Models\File\FileModel.cs" />
+    <Compile Include="Models\File\FileDeleteRequestModel.cs" />
+    <Compile Include="Models\File\MultipleFileResultModel.cs" />
+    <Compile Include="Models\File\FileUploadRequestModel.cs" />
+    <Compile Include="Models\File\FileResultModel.cs" />
+    <Compile Include="Models\Friend\FriendHiddenRequestModel.cs" />
+    <Compile Include="Models\Friend\FriendBlockRequestModel.cs" />
+    <Compile Include="Models\Friend\FriendMemberModel.cs" />
+    <Compile Include="Models\GroupAndFriendResultModel.cs" />
+    <Compile Include="Models\Friend\FriendResultModel.cs" />
+    <Compile Include="Models\Friend\FriendFavouriteRequestModel.cs" />
+    <Compile Include="Models\Group\AddGroupMemberRequestModel.cs" />
+    <Compile Include="Models\Group\UpdateGroupRequestModel.cs" />
+    <Compile Include="Models\Group\MultipleGroupResultModel.cs" />
+    <Compile Include="Models\Group\LeaveGroupRequestModel.cs" />
+    <Compile Include="Models\Group\AcceptGroupInvitationRequestModel.cs" />
+    <Compile Include="Models\Group\GroupRequestModel.cs" />
+    <Compile Include="Models\Group\CreateGroupRequestModel.cs" />
+    <Compile Include="Models\Group\GroupResultModel.cs" />
+    <Compile Include="Models\Group\GroupModel.cs" />
+    <Compile Include="Models\Member\DeviceTokenRequestModel.cs" />
+    <Compile Include="Models\Member\DeleteAccountRequestModel.cs" />
+    <Compile Include="Models\Member\ActivateResultModel.cs" />
+    <Compile Include="Models\Member\ActivateRequestModel.cs" />
+    <Compile Include="Models\Member\ChangePasswordRequestModel.cs" />
+    <Compile Include="Models\Member\ResetPasswordRequestModel.cs" />
+    <Compile Include="Models\Member\DeviceModel.cs" />
+    <Compile Include="Models\Member\SignInWithFacebookRequestModel.cs" />
+    <Compile Include="Models\Member\UpdateMemberModel.cs" />
+    <Compile Include="Models\Member\UpdatePhoneNoRequestModel.cs" />
+    <Compile Include="Models\Member\UpdateDisplayNameRequestModel.cs" />
+    <Compile Include="Models\Member\UpdateProfileRequestModel.cs" />
+    <Compile Include="Models\Member\SignInResultModel.cs" />
+    <Compile Include="Models\Member\SignInRequestModel.cs" />
+    <Compile Include="Models\Member\MemberModel.cs" />
+    <Compile Include="Models\Member\PhotoRequestModel.cs" />
+    <Compile Include="Models\Member\RegisterRequestModel.cs" />
+    <Compile Include="Models\Member\ProfileResultModel.cs" />
+    <Compile Include="Models\Member\TokenModel.cs" />
+    <Compile Include="Models\Member\ExistResultModel.cs" />
+    <Compile Include="Models\Message\MessageOfflineUpdateRequestModel.cs" />
+    <Compile Include="Models\Message\MessageOfflineAddRequestModel.cs" />
+    <Compile Include="Models\Message\OfflineMessageResultModel.cs" />
+    <Compile Include="Models\Message\OfflineMessageModel.cs" />
+    <Compile Include="Models\News\NewsCommentByCriteriaRequestModel.cs" />
+    <Compile Include="Models\News\NewsCommentModel.cs" />
+    <Compile Include="Models\News\NewsRequestModel.cs" />
+    <Compile Include="Models\News\NewsByCriteriaRequestModel.cs" />
+    <Compile Include="Models\News\NewsLikeRequestModel.cs" />
+    <Compile Include="Models\News\NewsCommentCreateRequestModel.cs" />
+    <Compile Include="Models\News\NewsCreateRequestModel.cs" />
+    <Compile Include="Models\News\NewsLikeModel.cs" />
+    <Compile Include="Models\News\NewsModel.cs" />
+    <Compile Include="Models\News\NewsCommentResultModel.cs" />
+    <Compile Include="Models\News\NewsResultModel.cs" />
+    <Compile Include="Models\Note\NoteRequestModel.cs" />
+    <Compile Include="Models\Note\NoteDeleteRequestModel.cs" />
+    <Compile Include="Models\Note\MultipleNoteResultModel.cs" />
+    <Compile Include="Models\Note\NoteImageUpdateRequestModel.cs" />
+    <Compile Include="Models\Note\NoteImageCreateRequestModel.cs" />
+    <Compile Include="Models\Note\NoteMessageUpdateRequestModel.cs" />
+    <Compile Include="Models\Note\NoteMessageCreateRequestModel.cs" />
+    <Compile Include="Models\Note\NoteModel.cs" />
+    <Compile Include="Models\Note\NoteResultModel.cs" />
+    <Compile Include="Models\ResultModel.cs" />
+    <Compile Include="Models\RevokeAuthRequestModel.cs" />
+    <Compile Include="Models\RevokeAuthResultModel.cs" />
+    <Compile Include="Models\Sticker\StickerItemRequestModel.cs" />
+    <Compile Include="Models\Sticker\StickerItemModel.cs" />
+    <Compile Include="Models\Sticker\StickerPackageRequestModel.cs" />
+    <Compile Include="Models\Sticker\StickerCreateRequestModel.cs" />
+    <Compile Include="Models\Sticker\StickerModel.cs" />
+    <Compile Include="Models\Sticker\StickerResultModel.cs" />
+    <Compile Include="Models\System\NoticeWithContentModel.cs" />
+    <Compile Include="Models\System\NoticeRequestModel.cs" />
+    <Compile Include="Models\System\NoticeResultModel.cs" />
+    <Compile Include="Models\System\NoticeCreateRequestModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\templates\activate.html" />
+    <Content Include="Assets\templates\change_loginid.html" />
+    <Content Include="Assets\templates\reset_password.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <EmbeddedResource Include="Content\Embeded\index.html" />
+    <EmbeddedResource Include="Content\Embeded\swashUI.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\OrganizationChat.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Member\Activate.cshtml" />
+    <Content Include="Views\System\Notice.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Business\Filters\" />
+    <Folder Include="Views\Abstract\" />
+    <Folder Include="Views\Group\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ASP.NET-WebApi-MultipartDataMediaFormatter-master\src\MultipartDataMediaFormatter\MultipartDataMediaFormatter.csproj">
+      <Project>{1f851995-9c6b-4b34-82af-ac4e075f00c2}</Project>
+      <Name>MultipartDataMediaFormatter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrgComm.Data\OrgComm.Data.csproj">
+      <Project>{2b52ae52-8103-40a0-96d4-198ade03ce06}</Project>
+      <Name>OrgComm.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OrgComm.Data.Models.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="user_settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="notification" Type="bit" Nullable="false" />
+    <Property Name="mute_until" Type="datetime" Precision="0" />
+    <Property Name="tone_type_id" Type="int" />
+    <Property Name="group_invitation" Type="bit" Nullable="false" />
+    <Property Name="show_preview" Type="bit" Nullable="false" />
+    <Property Name="when_screen_on_type_id" Type="int" />
+    <Property Name="sound" Type="bit" Nullable="false" />
+    <Property Name="vibrate" Type="bit" Nullable="false" />
+    <Property Name="led" Type="bit" Nullable="false" />
+    <Property Name="font_size" Type="int" />
+    <Property Name="auto_resend" Type="bit" Nullable="false" />
+    <Property Name="auto_add_friend" Type="bit" Nullable="false" />
+    <Property Name="allow_other_add" Type="bit" Nullable="false" />
+    <Property Name="allow_new_friends" Type="bit" Nullable="false" />
+    <Property Name="passcode_lock" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login_id" Type="varchar" MaxLength="50" />
+    <Property Name="public_id" Type="varchar" MaxLength="50" />
+    <Property Name="password_hash" Type="varchar" MaxLength="128" />
+    <Property Name="user_status" Type="int" />
+    <Property Name="registered_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="activation_key" Type="varchar" MaxLength="60" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="url" Type="varchar" MaxLength="100" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" />
+    <Property Name="nickname" Type="varchar" MaxLength="20" />
+    <Property Name="display_name" Type="varchar" MaxLength="30" />
+    <Property Name="gender" Type="char" MaxLength="1" />
+    <Property Name="weight" Type="float" />
+    <Property Name="height" Type="float" />
+    <Property Name="address" Type="varchar" MaxLength="256" />
+    <Property Name="city" Type="varchar" MaxLength="30" />
+    <Property Name="country_code" Type="int" />
+    <Property Name="zipcode" Type="varchar" MaxLength="10" />
+    <Property Name="phone_country" Type="varchar" MaxLength="5" />
+    <Property Name="phone" Type="varchar" MaxLength="30" />
+    <Property Name="photo_s" Type="mediumblob" />
+    <Property Name="photo_m" Type="mediumblob" />
+    <Property Name="photo_l" Type="mediumblob" />
+    <Property Name="longitude" Type="varchar" MaxLength="20" />
+    <Property Name="latitude" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="OrgCommDataModelsStoreContainer">
+    <EntitySet Name="user_settings" EntityType="Self.user_settings" Schema="chatme" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="chatme" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,20 @@
+﻿@model OrgCommunication.Models.Member.ActivateResultModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Activate</title>
+</head>
+<body>
+    <div>
+        Status: @Model.Status.ToString()<br />
+        Message: @(Model.InternalMessage ?? Model.Message)
+    </div>
+</body>
+</html>

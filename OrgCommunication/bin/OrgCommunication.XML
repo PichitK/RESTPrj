@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrgCommunication</name>
+    </assembly>
+    <members>
+        <member name="T:OrgCommunication.APIs.MessageController">
+            <summary>
+            Message API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.MessageController.AddOfflineMessage(OrgCommunication.Models.Message.MessageOfflineAddRequestModel)">
+            <summary>
+            Add message for offline member 
+            </summary>
+            <param name="param">Offline message add Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MessageController.UpdateOfflineMessage(OrgCommunication.Models.Message.MessageOfflineUpdateRequestModel)">
+            <summary>
+            Update offline message (data or type)
+            </summary>
+            <param name="param">Offline message update Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MessageController.GetOfflineMessages">
+            <summary>
+            Get offline messages (the return messages CANNOT be retrieved again)
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:OrgCommunication.APIs.SystemController">
+            <summary>
+            System API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.SystemController.CreateNotice(OrgCommunication.Models.System.NoticeCreateRequestModel)">
+            <summary>
+            Create News (for test)
+            </summary>`
+            <param name="param">Create News Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.SystemController.GetNotices">
+            <summary>
+            Get Notices
+            </summary>
+            <remarks>To get content detail, go to [host]/System/Notice?Id={noticeId}</remarks>
+        </member>
+        <member name="T:OrgCommunication.APIs.StickerController">
+            <summary>
+            Sticker API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.StickerController.CreateNews(OrgCommunication.Models.Sticker.StickerCreateRequestModel)">
+            <summary>
+            Create sticker (for test)
+            </summary>`
+            <param name="param">Create Sticker Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.StickerController.GetStickers">
+            <summary>
+            Get all stickers
+            </summary>
+            <remarks>
+            To get sticker image , go to [host]/Sticker/image?Id={stickerImageId}
+            </remarks>
+        </member>
+        <member name="T:OrgCommunication.APIs.NewsController">
+            <summary>
+            News API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.NewsController.CreateNews(OrgCommunication.Models.News.NewsCreateRequestModel)">
+            <summary>
+            Create News (for test)
+            </summary>`
+            <param name="param">Create News Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NewsController.GetNews(OrgCommunication.Models.News.NewsByCriteriaRequestModel)">
+            <summary>
+            Get News
+            </summary>
+            <param name="param">News Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NewsController.SetLikeForNews(OrgCommunication.Models.News.NewsLikeRequesetModel)">
+            <summary>
+            Set Like for News
+            </summary>
+            <param name="param">Set like type on News Request Model; type = null for un-like</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NewsController.CreateComment(OrgCommunication.Models.News.NewsCommentCreateRequesetModel)">
+            <summary>
+            Create comment on News
+            </summary>
+            <param name="param">Create Note message Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NewsController.GetCommentByNewsId(OrgCommunication.Models.News.NewsCommentByCriteriaRequestModel)">
+            <summary>
+            Get Comments of selected News
+            </summary>
+            <param name="param">News Comment Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:OrgCommunication.APIs.NoteController">
+            <summary>
+            Note API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.NoteController.CreateTextNote(OrgCommunication.Models.Note.NoteMessageCreateRequestModel)">
+            <summary>
+            Create note (text type)
+            </summary>
+            <param name="param">Create Note message Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NoteController.CreateImageNote(OrgCommunication.Models.Note.NoteImageCreateRequestModel)">
+            <summary>
+            Create note (image type)
+            </summary>
+            <param name="param">Create Note Image Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NoteController.UpdateTextNote(OrgCommunication.Models.Note.NoteMessageUpdateRequestModel)">
+            <summary>
+            Update note (set new text or change from image to text)
+            </summary>
+            <param name="param">Update Note message Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NoteController.UpdateImageNote(OrgCommunication.Models.Note.NoteImageUpdateRequestModel)">
+            <summary>
+            Update note (set new image or change from text to image)
+            </summary>
+            <param name="param">Update Note Image Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NoteController.GetNotes">
+            <summary>
+            Get notes (all types)
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.NoteController.DeleteNote(OrgCommunication.Models.Note.NoteDeleteRequestModel)">
+            <summary>
+            Delete note
+            </summary>
+            <param name="param">Note Delete Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:OrgCommunication.APIs.FileController">
+            <summary>
+            File API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.FileController.UploadVideo(OrgCommunication.Models.File.FileUploadRequestModel)">
+            <summary>
+            Upload video
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.FileController.UploadAudio(OrgCommunication.Models.File.FileUploadRequestModel)">
+            <summary>
+            Upload audio
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.FileController.UploadPhoto(OrgCommunication.Models.File.FileUploadRequestModel)">
+            <summary>
+            Upload photo
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.FileController.UploadFile(OrgCommunication.Models.File.FileUploadRequestModel)">
+            <summary>
+            Upload file
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.FileController.DeleteFile(OrgCommunication.Models.File.FileDeleteRequestModel)">
+            <summary>
+            Delete file
+            </summary>
+            <param name="param">File Delete Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.FileController.GetFiles">
+            <summary>
+            Get uploaded files
+            </summary>
+        </member>
+        <member name="T:OrgCommunication.APIs.ContactController">
+            <summary>
+            Contact API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.SetFavourite(OrgCommunication.Models.Friend.FriendFavouriteRequestModel)">
+            <summary>
+            Add/Remove friend in favourite list
+            </summary>
+            <param name="param">Set favourite request model </param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.SetBlock(OrgCommunication.Models.Friend.FriendBlockRequestModel)">
+            <summary>
+            Block/Un-block friend
+            </summary>
+            <param name="param">Set block/un-block request model </param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.SetHidden(OrgCommunication.Models.Friend.FriendHiddenRequestModel)">
+            <summary>
+            Hide/Un-hide friend
+            </summary>
+            <param name="param">Hide/un-hide request model </param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.GetBlockedMember">
+            <summary>
+            Get blockde friends list
+            </summary>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.GetHiddenMember">
+            <summary>
+            Get hidden friends list
+            </summary>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.GetContactList">
+            <summary>
+            Get friends and group list
+            </summary>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.CreateGroup(OrgCommunication.Models.Group.CreateGroupRequestModel)">
+            <summary>
+            Create new group
+            </summary>
+            <param name="param">Add Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.UpdateGroup(OrgCommunication.Models.Group.UpdateGroupRequestModel)">
+            <summary>
+            Update group info
+            </summary>
+            <param name="param">Update Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.AddGroupMember(OrgCommunication.Models.Group.AddGroupMemberRequestModel)">
+            <summary>
+            Add group member
+            </summary>
+            <param name="param">Add Member Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.AcceptGroupInvitation(OrgCommunication.Models.Group.AcceptGroupInvitationRequestModel)">
+            <summary>
+            Accept group invitation
+            </summary>
+            <param name="param">Accept Invitation Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.ContactController.LeaveGroup(OrgCommunication.Models.Group.LeaveGroupRequestModel)">
+            <summary>
+            Leave group
+            </summary>
+            <param name="param">Leave Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:OrgCommunication.APIs.CompanyController">
+            <summary>
+            Company API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.CompanyController.GetCompanies">
+            <summary>
+            Get companies
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.CompanyController.GetDepartments(OrgCommunication.Models.Company.CompanyInfoRequestModel)">
+            <summary>
+            Get companies
+            </summary>
+            <param name="param">Company Information Request Model</param>
+        </member>
+        <member name="M:OrgCommunication.APIs.CompanyController.GetPositions(OrgCommunication.Models.Company.CompanyInfoRequestModel)">
+            <summary>
+            Get positions of selected company
+            </summary>
+            <param name="param">Company Information Request Model</param>
+        </member>
+        <member name="T:OrgCommunication.APIs.MemberController">
+            <summary>
+            Member API
+            </summary>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.RevokeAuth(OrgCommunication.Models.RevokeAuthRequestModel)">
+            <summary>
+            Revoke authentication token
+            </summary>
+            <param name="param">Revoke Auth Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.SignIn(OrgCommunication.Models.Member.SignInRequestModel)">
+            <summary>
+            Sign-in and get member information
+            </summary>
+            <param name="param">SignIn Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.SignInWithFacebook(OrgCommunication.Models.Member.SignInWithFacebookRequestModel)">
+            <summary>
+            Sign-in and get member information with Facebook
+            </summary>
+            <param name="param">SignIn With Facebook Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.SignOut">
+            <summary>
+            Sign out
+            </summary>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.Activate(OrgCommunication.Models.Member.ActivateRequestModel)">
+            <summary>
+            Activate member
+            </summary>
+            <param name="param">Activate Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.Register(OrgCommunication.Models.Member.RegisterRequestModel)">
+            <summary>
+            Register member information
+            </summary>
+            <param name="param">Register Request Model</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.GetProfile">
+            <summary>
+            Get profile
+            </summary>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.UpdateProfile(OrgCommunication.Models.Member.UpdateProfileRequestModel)">
+            <summary>
+            Update member information
+            </summary>
+            <param name="param">Update Profile Request Model</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.UpdateDisplayName(OrgCommunication.Models.Member.UpdateDisplayNameRequestModel)">
+            <summary>
+            Update member's display name
+            </summary>
+            <param name="param">Update Display Name Request Model</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.UpdatePhoneNo(OrgCommunication.Models.Member.UpdatePhoneNoRequestModel)">
+            <summary>
+            Update member's phone no.
+            </summary>
+            <param name="param">Update Phone no Request Model</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.ChangePassword(OrgCommunication.Models.Member.ChangePasswordRequestModel)">
+            <summary>
+            Change password
+            </summary>
+            <param name="param">Change password Request Model</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.ResetPassword(OrgCommunication.Models.Member.ResetPasswordRequestModel)">
+            <summary>
+            Reset password
+            </summary>
+            <param name="param">Reset password Request Model</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.DeleteAccount(OrgCommunication.Models.Member.DeleteAccountRequestModel)">
+            <summary>
+            Delete account
+            </summary>
+            <param name="param">Delete Account Request Model</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.IsEmailAlreadyExists(System.String)">
+            <summary>
+            Check if email is already exists
+            </summary>
+            <param name="email">email</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.CheckIfMemberExistsByEmail(System.String)">
+            <summary>
+            Check if member exist by email
+            </summary>
+            <param name="email">Email; Use comma "," for many email, Ex: first@copa.co.th,second@copa.co.th</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.IsPhoneNoAlreadyExists(System.String)">
+            <summary>
+            Check if phone no is already exists
+            </summary>
+            <param name="phoneNo">Phone number</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.CheckIfMemberExistsByPhone(System.String)">
+            <summary>
+            Check if member exist by email
+            </summary>
+            <param name="phoneNo">Phone No.; Use comma "," for many number, Ex: 0898918096,087984567,087984777</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.RegisterDeviceToken(OrgCommunication.Models.Member.DeviceTokenRequestModel)">
+            <summary>
+            Add device
+            </summary>
+            <param name="param">Device Token Request Model</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="M:OrgCommunication.APIs.MemberController.RevokeDeviceToken(OrgCommunication.Models.Member.DeviceTokenRequestModel)">
+            <summary>
+            Remove device
+            </summary>
+            <param name="param">Device Token Request Model</param>
+            <remarks>Use access token of member model for request authorized API</remarks>
+        </member>
+        <member name="T:OrgCommunication.Models.File.MultipleFileResultModel">
+            <summary>
+            Multiple file Result
+            </summary>
+        </member>
+        <member name="T:OrgCommunication.Models.File.FileResultModel">
+            <summary>
+            Profile Result
+            </summary>
+        </member>
+        <member name="T:OrgCommunication.Models.Friend.FriendMemberModel">
+            <summary>
+            Member Information
+            </summary>
+        </member>
+        <member name="P:OrgCommunication.Models.Friend.FriendMemberModel.Id">
+            <summary>
+            Member MemberId
+            </summary>
+        </member>
+        <member name="T:OrgCommunication.Models.Member.MemberModel">
+            <summary>
+            Member Information
+            </summary>
+        </member>
+        <member name="P:OrgCommunication.Models.Member.MemberModel.Id">
+            <summary>
+            Member MemberId
+            </summary>
+        </member>
+        <member name="T:OrgCommunication.Models.Member.ProfileResultModel">
+            <summary>
+            Profile Result
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="OrgCommEntities">
+    <EntitySetMapping Name="UserSettings">
+      <EntityTypeMapping TypeName="OrgComm.Data.Models.UserSettings">
+        <MappingFragment StoreEntitySet="user_settings">
+          <ScalarProperty Name="passcode_lock" ColumnName="passcode_lock" />
+          <ScalarProperty Name="allow_new_friends" ColumnName="allow_new_friends" />
+          <ScalarProperty Name="allow_other_add" ColumnName="allow_other_add" />
+          <ScalarProperty Name="auto_add_friend" ColumnName="auto_add_friend" />
+          <ScalarProperty Name="auto_resend" ColumnName="auto_resend" />
+          <ScalarProperty Name="font_size" ColumnName="font_size" />
+          <ScalarProperty Name="led" ColumnName="led" />
+          <ScalarProperty Name="vibrate" ColumnName="vibrate" />
+          <ScalarProperty Name="sound" ColumnName="sound" />
+          <ScalarProperty Name="when_screen_on_type_id" ColumnName="when_screen_on_type_id" />
+          <ScalarProperty Name="show_preview" ColumnName="show_preview" />
+          <ScalarProperty Name="group_invitation" ColumnName="group_invitation" />
+          <ScalarProperty Name="tone_type_id" ColumnName="tone_type_id" />
+          <ScalarProperty Name="mute_until" ColumnName="mute_until" />
+          <ScalarProperty Name="notification" ColumnName="notification" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users1">
+      <EntityTypeMapping TypeName="OrgComm.Data.Models.User">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="photo_l" ColumnName="photo_l" />
+          <ScalarProperty Name="photo_m" ColumnName="photo_m" />
+          <ScalarProperty Name="photo_s" ColumnName="photo_s" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="phone_country" ColumnName="phone_country" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="country_code" ColumnName="country_code" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="display_name" ColumnName="display_name" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="activation_key" ColumnName="activation_key" />
+          <ScalarProperty Name="registered_date" ColumnName="registered_date" />
+          <ScalarProperty Name="user_status" ColumnName="user_status" />
+          <ScalarProperty Name="password_hash" ColumnName="password_hash" />
+          <ScalarProperty Name="public_id" ColumnName="public_id" />
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,17 @@
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\OrgComm.Data.dll.config
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\OrgComm.Data.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\OrgComm.Data.pdb
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\EntityFramework.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\MongoDB.Bson.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\MongoDB.Driver.Core.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\MongoDB.Driver.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\MySql.Data.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\MySql.Data.Entity.EF6.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\EntityFramework.xml
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\MongoDB.Bson.xml
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\bin\Release\MongoDB.Driver.xml
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\obj\Release\OrgComm.Data.csprojResolveAssemblyReference.cache
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\obj\Release\OrgComm.Data.dll
+D:\Playground\project-c#\OrgCommunication\OrgComm.Data\obj\Release\OrgComm.Data.pdb

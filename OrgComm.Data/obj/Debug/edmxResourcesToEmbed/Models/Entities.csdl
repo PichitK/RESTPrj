@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OrgComm.Data.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UserSetting">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="notification" Type="Boolean" Nullable="false" />
+    <Property Name="mute_until" Type="DateTime" />
+    <Property Name="tone_type_id" Type="Int32" />
+    <Property Name="group_invitation" Type="Boolean" Nullable="false" />
+    <Property Name="show_preview" Type="Boolean" Nullable="false" />
+    <Property Name="when_screen_on_type_id" Type="Int32" />
+    <Property Name="sound" Type="Boolean" Nullable="false" />
+    <Property Name="vibrate" Type="Boolean" Nullable="false" />
+    <Property Name="led" Type="Boolean" Nullable="false" />
+    <Property Name="font_size" Type="Int32" />
+    <Property Name="auto_resend" Type="Boolean" Nullable="false" />
+    <Property Name="auto_add_friend" Type="Boolean" Nullable="false" />
+    <Property Name="allow_other_add" Type="Boolean" Nullable="false" />
+    <Property Name="allow_new_friends" Type="Boolean" Nullable="false" />
+    <Property Name="passcode_lock" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="public_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password_hash" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="user_status" Type="Int32" />
+    <Property Name="registered_date" Type="DateTime" Nullable="false" />
+    <Property Name="activation_key" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nickname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="display_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="weight" Type="Single" />
+    <Property Name="height" Type="Single" />
+    <Property Name="address" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="country_code" Type="Int32" />
+    <Property Name="zipcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="phone_country" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="photo_s" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="photo_m" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="photo_l" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="longitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="latitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserSetting" Relationship="OrgComm.Data.Models.fk_user_setting_user" FromRole="User" ToRole="UserSetting" />
+  </EntityType>
+  <EntityContainer Name="OrgCommEntities" annotation:LazyLoadingEnabled="true" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <EntitySet Name="UserSettings" EntityType="OrgComm.Data.Models.UserSetting" />
+    <EntitySet Name="Users" EntityType="OrgComm.Data.Models.User" />
+    <AssociationSet Name="fk_user_setting_user" Association="OrgComm.Data.Models.fk_user_setting_user">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserSetting" EntitySet="UserSettings" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="fk_user_setting_user">
+    <End Type="OrgComm.Data.Models.User" Role="User" Multiplicity="1" />
+    <End Type="OrgComm.Data.Models.UserSetting" Role="UserSetting" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserSetting">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
